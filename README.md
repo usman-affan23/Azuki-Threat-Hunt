@@ -277,6 +277,150 @@ To establish persistent administrative access, harvest credentials, and exfiltra
 
 ### 🚩 Flag 1: Lateral Movement – Source System
 
+#### Query: <img width="684" height="109" alt="Flag 1 - Query" src="https://github.com/user-attachments/assets/467bb703-796a-4bdc-bd97-6e2479971616" />
+
+
+#### Result:<img width="1123" height="200" alt="Flag 1 - Result" src="https://github.com/user-attachments/assets/7e71d1bc-5950-41db-85f9-1a3875da625c" />
+
+
+### 🚩 Flag 2: Lateral Movement - Compromised Credentials
+
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 3: Lateral Movement - Target Device
+
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 4: Execution - Payload Hosting Service
+
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 5: Execution - Malware Download Command
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 6: Execution - Archive Extraction Command
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 7: Persistence - C2 Implant
+
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 8: Persistence - Named Pipe
+
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 9: Credential Access - Decoded Account Creation
+
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 10: Persistence - Backdoor Account
+
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 11: Persistence - Decoded Privilege Escalation Command
+
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 12: Discovery - Session Enumeration
+
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 13: Discovery - Domain Trust Enumeration
+
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 14: Discovery - Network Connection Enumeration
+
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 15: Discovery - Password Database Search
+
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 16: Discovery - Credential File
+
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 17: Collection - Data Staging Directory
+
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 18: Collection - Automated Data Collection Command
+
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 19: Collection - Exfiltration Volume
+
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 20: Credential Access - Credential Theft Tool Download
+
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 21: Credential Access - Browser Credential Theft
+
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 22: Exfiltration - Data Upload Command
+
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 23: Exfiltration - Cloud Storage Service
+
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 24: Exfiltration - Destination Server
+
+#### Query: 
+
+#### Result:
+
+### 🚩 Flag 25: Credential Access - Master Password Extraction
+
 #### Query: 
 
 #### Result:
