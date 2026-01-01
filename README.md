@@ -154,7 +154,6 @@ Browser credentials, password databases, and a KeePass master password were extr
 | 25 | 3:01:44 PM | The attacker extracted and stored the KeePass master password in `KeePass-Master-Password.txt`, enabling full access to stored credentials. |
 | 16 | 3:01:52 PM | The attacker discovered a plaintext credential file (`OLD-Passwords.txt`) reflecting poor password storage hygiene. |
 
-
 ---
 
 ## WHERE
