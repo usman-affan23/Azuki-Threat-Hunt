@@ -277,4 +277,8 @@ To establish persistent administrative access, harvest credentials, and exfiltra
 
 ### 🚩 Flag 1: Lateral Movement – Source System
 
+#### Query: 
+
+#### Result:
+
 ---
