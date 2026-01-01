@@ -275,6 +275,6 @@ To establish persistent administrative access, harvest credentials, and exfiltra
 
 ### C. Evidence and Investigative Queries
 
-*(Available upon request or in supporting investigation notebooks)*
+### 🚩 Flag 1: Lateral Movement – Source System
 
 ---
