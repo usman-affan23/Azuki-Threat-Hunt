@@ -276,7 +276,8 @@ To establish persistent administrative access, harvest credentials, and exfiltra
 
 ### 🚩 Flag 1: Lateral Movement – Source System
 
-#### Query:<img width="684" height="109" alt="Flag 1 - Query" src="https://github.com/user-attachments/assets/467bb703-796a-4bdc-bd97-6e2479971616" />
+#### Query:
+<img width="684" height="109" alt="Flag 1 - Query" src="https://github.com/user-attachments/assets/467bb703-796a-4bdc-bd97-6e2479971616" />
 
 #### Result:<img width="1123" height="200" alt="Flag 1 - Result" src="https://github.com/user-attachments/assets/7e71d1bc-5950-41db-85f9-1a3875da625c" />
 
