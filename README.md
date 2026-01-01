@@ -94,31 +94,66 @@ Browser credentials, password databases, and a KeePass master password were extr
 
 ## Verified Timeline
 
+### Ordered by Flag Sequence
+
+| Flag | Time Generated (UTC) | Event |
+|------|----------------------|-------|
+| 1 | 4:06:52 AM | The attacker initiates lateral movement from the previously compromised internal host at 10.1.0.204 to pivot deeper into the environment |
+| 2 | 4:06:52 AM | The attacker reused the compromised legitimate account yuki.tanaka to authenticate during lateral movement, avoiding credential-based detection |
+| 3 | 4:31:50 AM | The attacker targeted the high-value admin workstation azuki-adminpc, indicating intent to access privileged data and controls |
+| 4 | 4:21:12 AM | The attacker leveraged the external file hosting service litter.catbox.moe to stage malicious payloads outside the organization |
+| 5 | 4:21:11 AM | The attacker used curl.exe to download a malicious archive disguised as a Windows security update into a temporary cache directory |
+| 6 | 4:21:32 AM | The attacker extracted a password-protected archive using 7z.exe, bypassing basic content inspection and application controls |
+| 7 | 4:21:33 AM | The attacker deployed a Meterpreter-based command-and-control implant (meterpreter.exe) to maintain interactive remote access |
+| 8 | 4:24:35 AM | The C2 implant created a named pipe (`\\Device\\NamedPipe\\msf-pipe-5902`) to enable stealthy local inter-process communication |
+| 9 | 4:51:08 AM | The attacker executed an obfuscated PowerShell command to create a new local user account (yuki.tanaka2) for persistent access |
+| 10 | 4:51:08 AM | The attacker established a covert backdoor account (yuki.tanaka2) to blend in with legitimate user naming conventions |
+| 11 | 4:51:23 AM | The attacker escalated privileges by adding the backdoor account to the local Administrators group |
+| 12 | 4:08:58 AM | The attacker enumerated active RDP sessions using `qwinsta` to identify logged-in users and potential targets |
+| 13 | 4:09:25 AM | The attacker queried Active Directory trust relationships using `nltest /domain_trusts /all_trusts` to assess cross-domain movement paths |
+| 14 | 4:10:07 AM | The attacker executed `netstat -ano` to identify active network connections and the processes owning them |
+| 15 | 4:13:45 AM | The attacker recursively searched user directories for KeePass databases using `cmd.exe /c where /r C:\\Users *.kdbx` |
+| 16 | 3:01:52 PM | The attacker discovered a plaintext credential file (`OLD-Passwords.txt`) reflecting poor password storage hygiene |
+| 17 | 4:37:03 AM | The attacker staged collected data in `C:\\ProgramData\\Microsoft\\Crypto\\staging`, a path designed to appear authentic |
+| 18 | 4:37:03 AM | The attacker used robocopy.exe with reliability flags to automate bulk theft of banking documents |
+| 19 | 4:37:33 – 4:40:30 AM | The attacker prepared eight compressed archives, indicating significant data volume staged for exfiltration |
+| 20 | 5:55:34 AM | The attacker downloaded a credential theft tool using curl.exe, reusing previously established infrastructure |
+| 21 | 5:55:54 AM | The attacker extracted Chrome browser credentials using a DPAPI abuse module executed via m.exe |
+| 22 | 4:41:51 AM | The attacker exfiltrated stolen data using a form-based HTTP POST upload via curl.exe |
+| 23 | 4:41:41 AM | The attacker uploaded stolen data to the anonymous file-sharing service gofile.io to evade attribution |
+| 24 | 4:41:52 AM | The attacker transferred data to the external server at 45.112.123.227, representing the final exfiltration endpoint |
+| 25 | 3:01:44 PM | The attacker extracted and stored the KeePass master password in `KeePass-Master-Password.txt`, enabling full access to stored credentials |
+
 ### Ordered by Time Generated (UTC)
 
-| Flag | Time | Event |
-|----|----|----|
-| 1 | 4:06:52 AM | Lateral movement initiated from 10.1.0.204 |
-| 2 | 4:06:52 AM | Compromised account `yuki.tanaka` reused |
-| 12 | 4:08:58 AM | RDP session enumeration via `qwinsta` |
-| 13 | 4:09:25 AM | Domain trust enumeration via `nltest` |
-| 14 | 4:10:07 AM | Network connections enumerated via `netstat -ano` |
-| 15 | 4:13:45 AM | KeePass databases searched |
-| 5 | 4:21:11 AM | Malware downloaded via `curl.exe` |
-| 6 | 4:21:32 AM | Archive extracted using `7z.exe` |
-| 7 | 4:21:33 AM | Meterpreter C2 implant executed |
-| 8 | 4:24:35 AM | Named pipe created |
-| 17 | 4:37:03 AM | Data staged in Crypto directory |
-| 19 | 4:37:33–4:40:30 AM | Eight archives prepared |
-| 23 | 4:41:41 AM | Data uploaded to `gofile.io` |
-| 22 | 4:41:51 AM | Data exfiltration via HTTP POST |
-| 24 | 4:41:52 AM | Data transferred to `45.112.123.227` |
-| 9 | 4:51:08 AM | Backdoor account created |
-| 11 | 4:51:23 AM | Privilege escalation completed |
-| 20 | 5:55:34 AM | Credential theft tool downloaded |
-| 21 | 5:55:54 AM | Chrome credentials extracted |
-| 25 | 3:01:44 PM | KeePass master password extracted |
-| 16 | 3:01:52 PM | Plaintext password file discovered |
+| Flag | Time Generated (UTC) | Event |
+|------|----------------------|-------|
+| 1 | 4:06:52 AM | The attacker initiates lateral movement from the previously compromised internal host at 10.1.0.204 to pivot deeper into the environment. |
+| 2 | 4:06:52 AM | The attacker reused the compromised legitimate account yuki.tanaka to authenticate during lateral movement, avoiding credential-based detection. |
+| 12 | 4:08:58 AM | The attacker enumerated active RDP sessions using `qwinsta` to identify logged-in users and potential targets. |
+| 13 | 4:09:25 AM | The attacker queried Active Directory trust relationships using `nltest /domain_trusts /all_trusts` to assess cross-domain movement paths. |
+| 14 | 4:10:07 AM | The attacker executed `netstat -ano` to identify active network connections and the processes owning them. |
+| 15 | 4:13:45 AM | The attacker recursively searched user directories for KeePass databases using `cmd.exe /c where /r C:\Users *.kdbx`. |
+| 5 | 4:21:11 AM | The attacker used curl.exe to download a malicious archive disguised as a Windows security update into a temporary cache directory. |
+| 4 | 4:21:12 AM | The attacker leveraged the external file hosting service litter.catbox.moe to stage malicious payloads outside the organization. |
+| 6 | 4:21:32 AM | The attacker extracted a password-protected archive using 7z.exe, bypassing basic content inspection and application controls. |
+| 7 | 4:21:33 AM | The attacker deployed a Meterpreter-based command-and-control implant (meterpreter.exe) to maintain interactive remote access. |
+| 8 | 4:24:35 AM | The C2 implant created a named pipe (`\Device\NamedPipe\msf-pipe-5902`) to enable stealthy local inter-process communication. |
+| 3 | 4:31:50 AM | The attacker targeted the high-value administrative workstation azuki-adminpc, indicating intent to access privileged data and controls. |
+| 17 | 4:37:03 AM | The attacker staged collected data in `C:\ProgramData\Microsoft\Crypto\staging`, a path designed to appear legitimate. |
+| 18 | 4:37:03 AM | The attacker used robocopy.exe with reliability flags to automate bulk theft of banking documents. |
+| 19 | 4:37:33 – 4:40:30 AM | The attacker prepared eight compressed archives, indicating significant data volume staged for exfiltration. |
+| 23 | 4:41:41 AM | The attacker uploaded stolen data to the anonymous file-sharing service gofile.io to evade attribution. |
+| 22 | 4:41:51 AM | The attacker exfiltrated stolen data using a form-based HTTP POST upload via curl.exe. |
+| 24 | 4:41:52 AM | The attacker transferred data to the external server at 45.112.123.227, representing the final exfiltration endpoint. |
+| 9 | 4:51:08 AM | The attacker executed an obfuscated PowerShell command to create a new local user account (yuki.tanaka2) for persistent access. |
+| 10 | 4:51:08 AM | The attacker established a covert backdoor account (yuki.tanaka2) designed to blend in with legitimate naming conventions. |
+| 11 | 4:51:23 AM | The attacker escalated privileges by adding the backdoor account to the local Administrators group. |
+| 20 | 5:55:34 AM | The attacker downloaded a credential theft tool using curl.exe, reusing previously established infrastructure. |
+| 21 | 5:55:54 AM | The attacker extracted Chrome browser credentials using a DPAPI abuse module executed via m.exe. |
+| 25 | 3:01:44 PM | The attacker extracted and stored the KeePass master password in `KeePass-Master-Password.txt`, enabling full access to stored credentials. |
+| 16 | 3:01:52 PM | The attacker discovered a plaintext credential file (`OLD-Passwords.txt`) reflecting poor password storage hygiene. |
+
 
 ---
 
